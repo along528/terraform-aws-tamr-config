@@ -53,3 +53,11 @@ resource "local_file" "populated_config_file" {
   filename = var.rendered_config_path
   content  = data.template_file.tamr_config.rendered
 }
+
+
+resource "aws_s3_bucket_object" "object" {
+  bucket = var.target_bucket_name
+  key    = var.target_bucket_key
+  source = data.template_file.tamr_config.filename
+  etag = filemd5(data.template_file.tamr_config.filename)
+}

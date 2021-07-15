@@ -354,3 +354,15 @@ variable "apps_dms_default_cloud_provider" {
   description = "Defines the default cloud service provider for DMS when `APPS_DMS_ENABLED` is set to `true`"
   default     = "s3"
 }
+
+variable "target_bucket_name" {
+  type        = string
+  description = "If specified, the S3 bucket to copy the rendered configuration file to"
+  default     = ""
+}
+
+variable "target_bucket_key" {
+  type = string
+  description = "If target_bucket_name is specified, the path in the bucket to copy the rendered configuration file to"
+  default = "config"
+}
