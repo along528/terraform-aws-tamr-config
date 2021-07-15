@@ -364,5 +364,5 @@ variable "target_bucket_name" {
 variable "target_bucket_key" {
   type = string
   description = "If target_bucket_name is specified, the path in the bucket to copy the rendered configuration file to"
-  default = "config"
+  default = "config/rendered-config.yml"
 }
