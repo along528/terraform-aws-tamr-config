@@ -56,8 +56,9 @@ resource "local_file" "populated_config_file" {
 
 
 resource "aws_s3_bucket_object" "object" {
+  count  = var.target_bucket_name == "" ? 0 : 1
   bucket = var.target_bucket_name
   key    = var.target_bucket_key
   source = var.rendered_config_path
-  etag = filemd5(var.rendered_config_path)
+  server_side_encryption = "AES256"
 }
