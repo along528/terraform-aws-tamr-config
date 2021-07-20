@@ -84,6 +84,9 @@ This module creates:
 | tamr\_unify\_backup\_aws\_role\_based\_access | Set to `true` if Tamr should use EC2 instance profile (role-based) credentials instead of static credentials | `bool` | `true` | no |
 | tamr\_unify\_backup\_es | Defines whether or not to back up Elasticsearch | `bool` | `false` | no |
 | tamr\_unify\_backup\_path | Identifies the path for storing backup files | `string` | `"tamr/backups"` | no |
+| target\_bucket\_key | If target_bucket_name is specified, the path in the bucket to copy the rendered configuration file to | `string` | `"config/rendered-config.yml"` | no |
+| target\_bucket\_name | If specified, the S3 bucket to copy the rendered configuration file to | `string` | `""` | no |
+
 
 ## Outputs
 
