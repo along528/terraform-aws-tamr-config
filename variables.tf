@@ -150,6 +150,11 @@ variable "tamr_spark_properties_override" {
 # Elasticsearch
 #
 
+variable "es_enabled" {
+  type        = bool
+  description = "Flag to determine if Tamr will is configured to use Elasticsearch"
+}
+
 variable "es_domain_endpoint" {
   type        = string
   description = "Endpoint of Elasticsearch domain."
